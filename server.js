@@ -14,7 +14,7 @@ var port = process.env.PORT || 9900;
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 // ---------------- Serving Favicon ---------------- >>
-app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(favicon(__dirname + '/public/images/fav.ico'));
 
 // ---------------- Log HTTP Requests ---------------- >>
 app.use(morgan('dev'));
