@@ -1,0 +1,25 @@
+{
+  "name": "kw-chat-app",
+  "version": "1.0.0",
+  "description": "A sipmle real time chat application using node.js and socket.io",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamsantto/KW-Chat-App.git"
+  },
+  "author": "Santhosh Thirumavalavan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamsantto/KW-Chat-App/issues"
+  },
+  "homepage": "https://github.com/iamsantto/KW-Chat-App#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.2",
+    "socket.io": "^1.7.2"
+  }
+}
