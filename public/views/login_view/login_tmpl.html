@@ -1,11 +1,11 @@
-<div id="loginBox">
+<div id="loginBox" ng-controller="loginCtrl">
     <div class="col-md-offset-4 col-md-4">
-        <form class="form-horizontal">
+        <form class="form-horizontal" ng-submit="signIn(cred)">
           <div class="form-group">
-            <input type="text" class="form-control" id="" placeholder="Username">
+            <input type="text" class="form-control" placeholder="Username" ng-model="cred.username" required>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="" placeholder="Chat Room">
+            <input type="text" class="form-control" placeholder="Chat Room" ng-model="cred.chatRoom" required>
             <p class="text-center"><a href="#">View available chat rooms</a></p>
           </div>
           <div class="form-group">
