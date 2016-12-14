@@ -1,4 +1,4 @@
-angular.module('KWChat').factory('dbConnect', function($http){
+angular.module('KWChat').factory('dbConnect', function($http,$rootScope){
   return {
     saveMessages : function(messageDetails){
       var res = $http.post('api/messages',messageDetails);
@@ -9,8 +9,7 @@ angular.module('KWChat').factory('dbConnect', function($http){
     restoreMessages : function(chatRoom){
       var res = $http.get('api/messages',{params:{'room':chatRoom}});
       res.then(function(response){
-        // return response.data;
-        console.log(response);
+        $rootScope.messages = response.data;
       })
     }
   }
