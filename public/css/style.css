@@ -6,9 +6,27 @@ body {
 
 }
 
-.contentMain {
+.centerIt {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  width: 100%;
+}
+
+#chatBox {
+  margin-top: 60px;
+}
+
+.chatHeader {
+  background-color: #eee;
+}
+
+.btnPadding {
+  padding: 10px 5px ;
+}
+
+.chatFooter {
+  position: fixed;
+  bottom: 7%;
   width: 100%;
 }

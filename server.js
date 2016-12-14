@@ -9,6 +9,7 @@ var io = require('socket.io').listen(server);
 
 // ---------------- Varibles ---------------- >>
 var port = process.env.PORT || 9900;
+var connections = [];
 
 // ---------------- Static Files served at /public ---------------- >>
 app.use('/', express.static(path.join(__dirname, 'public')));
@@ -18,6 +19,26 @@ app.use(favicon(__dirname + '/public/images/fav.ico'));
 
 // ---------------- Log HTTP Requests ---------------- >>
 app.use(morgan('dev'));
+
+io.sockets.on('connection', function(socket){
+  connections.push(socket);
+  console.log('Connected: %s sockets connected', connections.length);
+
+  socket.on('room', function(room){
+      socket.join(room);
+  })
+  
+  socket.on('message', function(data){
+    io.sockets.in(data.chatRoom).emit('newMessage', {message: data.message});
+  })
+
+  socket.on('disconnect', function(data){
+    connections.splice(connections.indexOf(socket),1);
+    console.log('Disconnected: %s sockets connected', connections.length);
+  })
+
+
+})
 
 // ---------------- Log Port Details ---------------- >>
 console.log('Server running at ' + port);

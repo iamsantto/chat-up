@@ -1,3 +1,25 @@
 <div id="chatBox" ng-controller="chatCtrl">
-    Hello World
+  <div class="row chatHeader">
+    <div class="col-md-11">
+      <h4><small>Hi {{cred.username}}</small><br>{{cred.chatRoom}}</h4>
+    </div>
+    <div class="col-md-1 btnPadding">
+      <button type="button" class="btn btn-default pull-right" aria-label="Log Out">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <ul ng-repeat="message in messages">
+      <li>{{message}}</li>
+    </ul>
+  </div>
+  <div class="row chatFooter">
+    <div class="col-md-11">
+      <textarea type="text" class="form-control" placeholder="Type your message here.." ng-model="message" required></textarea>
+    </div>
+    <div class="col-md-1 btnPadding">
+      <button type="button" class="btn btn-default" ng-click="sendMessage(message)">Send</button>
+    </div>
+  </div>
 </div>
