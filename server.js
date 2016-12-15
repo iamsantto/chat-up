@@ -20,6 +20,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 // ---------------- Serving Favicon ---------------- >>
 app.use(favicon(__dirname + '/public/images/fav.ico'));
 
+// ---------------- Body Parser ---------------- >>
 app.use(parser.json());
 app.use(parser.urlencoded({extended: true}));
 
@@ -30,22 +31,22 @@ app.use(morgan('dev'));
 io.sockets.on('connection', function(socket){
   connections.push(socket);
   console.log('Connected: %s sockets connected', connections.length);
-
+  //joining a new room
   socket.on('room', function(room){
       socket.join(room);
   })
-
+  //new message
   socket.on('message', function(data){
     io.sockets.in(data.room).emit('newMessage', data);
   })
-
+  //disconnect
   socket.on('disconnect', function(data){
     connections.splice(connections.indexOf(socket),1);
     console.log('Disconnected: %s sockets connected', connections.length);
   })
-
 })
 
+// ---------------- API Routes ---------------- >>
 app.use('/api',getMessage);
 app.use('/api',saveMessage);
 
