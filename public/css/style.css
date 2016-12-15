@@ -1,9 +1,39 @@
 body {
-
+  background: url('../images/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment:fixed;
+  background-size: cover;
 }
 
 .header {
 
+}
+
+input,textarea {
+  color: #fff !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  border-bottom: 1px solid #000 !important;
+}
+
+.form-control{
+  border-radius: 0px !important;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .centerIt {
@@ -14,19 +44,57 @@ body {
 }
 
 #chatBox {
-  margin-top: 60px;
+  margin-top: auto;
 }
 
+#loginBox {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px;
+}
+
+.thread {
+  max-height: 400px;
+  margin-top: 120px;
+  overflow: auto;
+}
+
+.glyphicon-user {
+  font-size: 2em !important;
+  text-align: center;
+  color: #5BC0DE;
+}
+
+.userIcon {
+  padding: 10px 20px;
+}
+
+.threadHead {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 2px;
+}
+
+.threadCont {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  color: #fff;
+}
 .chatHeader {
-  background-color: #eee;
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  z-index: 99;
 }
-
+li {
+  list-style: none;
+}
 .btnPadding {
-  padding: 10px 5px ;
+  padding: 10px;
 }
 
 .chatFooter {
   position: fixed;
   bottom: 7%;
   width: 100%;
+  z-index: 99;
 }

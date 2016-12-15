@@ -3,27 +3,46 @@
   <!--** Chat Header **-->
   <div class="row chatHeader">
     <div class="col-md-11">
-      <h4><small>Hi {{cred.username}}</small><br>{{cred.chatRoom}}</h4>
+      <h4><small>Hello {{cred.username}}</small><br>{{cred.chatRoom}}</h4>
     </div>
     <div class="col-md-1 btnPadding">
-      <button type="button" class="btn btn-default pull-right" ng-click="logout()" aria-label="Log Out">
+      <button type="button" class="btn btn-danger pull-right" title="Logout" ng-click="logout()" aria-label="Log Out">
         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
       </button>
     </div>
   </div>
   <!--** Messages Thread **-->
-  <div class="row">
-    <ul ng-repeat="message in messages">
-      <li>{{message.content}}</li>
+  <div class="row thread">
+    <ul class="col-md-offset-2 col-md-8" ng-repeat="message in messages">
+      <li class="row">
+        <div class="col-md-1 userIcon">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        </div>
+        <div class="col-md-11 threadBox">
+          <div class="row threadHead">
+            <div class="col-md-6">
+              {{message.username}}
+            </div>
+            <div class="col-md-6 text-right">
+              {{message.timestamp}}
+            </div>
+          </div>
+          <div class="row threadCont">
+            {{message.content}}
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
   <!--** Send Message Box **-->
   <div class="row chatFooter">
-    <div class="col-md-11">
-      <textarea type="text" class="form-control" placeholder="Type your message here.." ng-model="message" required></textarea>
+    <div class=" col-md-offset-2 col-md-8">
+      <input type="text" class="form-control" placeholder="Type your message here.." ng-model="message" required>
     </div>
     <div class="col-md-1 btnPadding">
-      <button type="button" class="btn btn-default" ng-click="sendMessage(message)">Send</button>
+      <button type="button" class="btn btn-info" title="Send" ng-click="sendMessage(message)">
+        <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
 </div>
