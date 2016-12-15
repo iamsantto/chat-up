@@ -1,3 +1,4 @@
+<!--** Login View Template **-->
 <div id="loginBox" class="centerIt" ng-controller="loginCtrl">
     <div class="col-md-offset-4 col-md-4">
         <form class="form-horizontal" ng-submit="signIn(cred)">
@@ -6,7 +7,6 @@
           </div>
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Chat Room" ng-model="cred.chatRoom" required>
-            <p class="text-center"><a href="#">View available chat rooms</a></p>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-default btn-lg btn-block">Sign In</button>

@@ -1,7 +1,8 @@
+// ---------------- Save New Messages API ---------------- >>
 var express = require('express');
 var router = express.Router();
 var mongo = require('../mongo_util');
-var messages = mongo.get('Messages');
+var messages = mongo.get('Messages'); //collection = 'Messages'
 
 router.post('/messages',function(req, res) {
   var newMessage = req.body;
