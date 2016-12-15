@@ -1,4 +1,11 @@
 angular.module('KWChat').controller('chatCtrl', function($scope,$rootScope,$stateParams,dbConnect){
+  $scope.newMessage = function(username, room, content) {
+    this.username = username;
+    this.room = room;
+    this.content = content;
+    this.timestamp = new Date();
+}
+
   $scope.cred = {
     'username' : $stateParams.username,
     'chatRoom' : $stateParams.chatRoom
@@ -13,12 +20,16 @@ angular.module('KWChat').controller('chatCtrl', function($scope,$rootScope,$stat
   })
 
   $scope.socket.on('newMessage', function(data){
-    $rootScope.messages.push(data.message);
+    console.log(data);
+    console.log("hi");
+    $rootScope.messages.push(data);
     $scope.$apply();
   })
 
   $scope.sendMessage = function(message){
-    $scope.socket.emit('message', {'message':message,'chatRoom':$scope.cred.chatRoom});
+    var newMsg = new $scope.newMessage($scope.cred.username, $scope.cred.chatRoom, $scope.message);
+    $scope.socket.emit('message', newMsg);
+    dbConnect.saveMessages(newMsg);
     $scope.message = '';
   }
 })

@@ -36,7 +36,7 @@ io.sockets.on('connection', function(socket){
   })
 
   socket.on('message', function(data){
-    io.sockets.in(data.chatRoom).emit('newMessage', {message: data.message});
+    io.sockets.in(data.room).emit('newMessage', data);
   })
 
   socket.on('disconnect', function(data){
