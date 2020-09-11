@@ -6,8 +6,8 @@ var morgan = require('morgan');
 var favicon = require('serve-favicon');
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
-var getMessage = require('./routes/getMessages_api');
-var saveMessage = require('./routes/saveMessages_api');
+var getMessage = require('./server/api/getMessage');
+var saveMessage = require('./server/api/saveMessage');
 var parser = require('body-parser');
 
 // ---------------- Varibles ---------------- >>

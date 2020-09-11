@@ -1,7 +1,7 @@
 {
-  "name": "KWChatApp",
+  "name": "ChatUp",
   "homepage": "https://github.com/iamsantto/KW-Chat-App",
-  "description": "A simple real time chat application",
+  "description": "A simple real time chat application.",
   "main": "index.html",
   "authors": [
     "Santhosh Thirumavalavan"

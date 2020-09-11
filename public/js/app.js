@@ -1,5 +1,5 @@
 // ---------------- App Cofig Set Up ---------------- >>
-angular.module('KWChat',['ui.router']).config(function($stateProvider, $urlRouterProvider){
+angular.module('ChatUp',['ui.router']).config(function($stateProvider, $urlRouterProvider){
   $stateProvider
     // Login Page View Config
     .state('login',{

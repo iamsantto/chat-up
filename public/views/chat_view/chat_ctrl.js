@@ -1,4 +1,4 @@
-angular.module('KWChat').controller('chatCtrl', function($scope,$rootScope,$stateParams,$state,dbConnect){
+angular.module('ChatUp').controller('chatCtrl', function($scope,$rootScope,$stateParams,$state,dbConnect){
   $scope.message = '';
   // ---------------- New Message Object Prototype ---------------- >>
   $scope.newMessage = function(username, room, content) {

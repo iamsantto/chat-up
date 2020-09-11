@@ -1,5 +1,5 @@
 // ---------------- Factory Functions ---------------- >>
-angular.module('KWChat').factory('dbConnect', function($http,$rootScope){
+angular.module('ChatUp').factory('dbConnect', function($http,$rootScope){
   return {
     //save message API call
     saveMessages : function(messageDetails){

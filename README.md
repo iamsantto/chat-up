@@ -1,6 +1,7 @@
-# KW-Chat-App
-A single page real time chat server with multiple chat rooms.
+# Chat Up
+Single page application which can handle multiple chat rooms and real time communication between the rooms and it's members.
 
-Frontend : Angular.js, Bootstrap
+Built with Angular & Bootstrap on the frontend and Node.js & MongoDb on the backend.
 
-Backend : Node.js, Socket.io, MongoDb
+App uses Socket.io for enabling real time communication.
+
